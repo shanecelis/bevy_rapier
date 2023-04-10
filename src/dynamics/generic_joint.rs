@@ -425,6 +425,12 @@ impl GenericJointBuilder {
         self
     }
 
+    #[must_use]
+    pub fn contacts_enabled(mut self, enabled: bool) -> Self {
+        self.0.set_contacts_enabled(enabled);
+        self
+    }
+
     /// Builds the generic joint.
     #[must_use]
     pub fn build(self) -> GenericJoint {

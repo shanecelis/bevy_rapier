@@ -219,6 +219,12 @@ impl SphericalJointBuilder {
         self
     }
 
+    #[must_use]
+    pub fn contacts_enabled(mut self, enabled: bool) -> Self {
+        self.0.set_contacts_enabled(enabled);
+        self
+    }
+
     /// Sets the `[min,max]` limit distances attached bodies can rotate along the specified axis.
     #[must_use]
     pub fn limits(mut self, axis: JointAxis, limits: [Real; 2]) -> Self {
